@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile | Docker Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <div class="header">
+            <span class="tag">DOCKER LEARNING LAB</span>
+            <h1>User Profile</h1>
+            <p>Manage and update your personal information.</p>
+        </div>
+
+        <div class="profile-card">
+            <div class="avatar">M</div>
+
+            <h2 id="displayName">Loading...</h2>
+            <p class="subtitle">Your personal account</p>
+
+            <form id="profileForm">
+
+                <div class="field">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="field">
+                    <label for="bio">About Me</label>
+                    <textarea id="bio" rows="3"></textarea>
+                </div>
+
+                <button type="submit">Save Changes</button>
+
+                <p id="message"></p>
+            </form>
+        </div>
+
+        <footer>
+            Built with Node.js & Express · Docker Practice
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

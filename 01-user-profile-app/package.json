@@ -1,0 +1,13 @@
+{
+  "name": "user-profile-app",
+  "version": "1.0.0",
+  "description": "Simple Node.js user profile update application for Docker learning",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongodb": "^7.8.0"
+  }
+}
