@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3000;
 
 // MongoDB connection
-const mongoURL = "mongodb://admin:password@localhost:27017/?authSource=admin";
+const mongoURL = process.env.MONGO_URL || "mongodb://admin:password@localhost:27017/?authSource=admin";
 const client = new MongoClient(mongoURL);
 
 app.use(express.json());

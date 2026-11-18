@@ -19,6 +19,27 @@ services:
     networks:
       - mongo-network
 
+
+  user-profile-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: user-profile-app
+    restart: unless-stopped
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      MONGO_URL: mongodb://admin:password@mongodb:27017/?authSource=admin
+
+    depends_on:
+      - mongodb
+
+    networks:
+      - mongo-network
+
+
   mongo-express:
     image: mongo-express:1.0.2-20
     container_name: mongo-express
@@ -33,6 +54,9 @@ services:
       ME_CONFIG_MONGODB_SERVER: mongodb
       ME_CONFIG_MONGODB_URL: mongodb://admin:password@mongodb:27017/?authSource=admin
 
+      ME_CONFIG_BASICAUTH_ENABLED: "true"
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: password
     depends_on:
       - mongodb
 
