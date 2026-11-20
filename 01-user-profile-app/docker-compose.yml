@@ -18,7 +18,7 @@ services:
 
     networks:
       - mongo-network
-
+    
 
   user-profile-app:
     build:
